@@ -1,0 +1,6 @@
+{
+	"/api_v2/mobile/getIndexInfo": "/getIndexInfo",
+	"/api_v2/member/orders": "/orders",
+	"/api_v2/member/people/:id": "/people/:id",
+	"/blog/:category": "/posts/:id?category=:category"
+}

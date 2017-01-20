@@ -1,0 +1,18 @@
+{
+  "name": "jsonserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mock": "nodemon json-server/bin/index.js mock/index.js --c mock/config.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chance.js": "0.0.1",
+    "faker": "^3.1.0",
+    "json-server": "^0.9.4",
+    "lodash": "^4.17.4",
+    "mock": "^0.1.1"
+  }
+}

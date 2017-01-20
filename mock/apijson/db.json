@@ -1,0 +1,14 @@
+{
+  "getIndexInfo": {
+    "status": 0, 
+    "msg": "success", 
+    "data": {
+      "info": {
+        "green_point": 0, 
+        "id": "7484140644827693501", 
+        "name": "首次充值", 
+      }, 
+      "_initial_account": 0
+    }
+  }
+}
