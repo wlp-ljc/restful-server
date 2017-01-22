@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "chance.js": "0.0.1",
+    "chance": "^1.0.4",
     "faker": "^3.1.0",
     "json-server": "^0.9.4",
     "lodash": "^4.17.4",

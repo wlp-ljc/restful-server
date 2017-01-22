@@ -1,0 +1,28 @@
+{
+  "getIndexMenu": {
+    "status": 0, 
+    "msg": "success", 
+    "data": { 
+      "menu":[{
+        "name": "首页",
+        "submenu": [
+          "首页子菜单1",
+          "首页子菜单2",
+          "首页子菜单3",
+          "首页子菜单4"
+        ]
+      },{
+        "name": "淘宝",
+        "submenu": [
+          "淘宝子菜单1",
+          "淘宝子菜单2",
+          "淘宝子菜单3",
+          "淘宝子菜单4"
+        ]
+      }]
+    },
+    "_super_admin": 0,
+    "_init_accout": 1,
+    "_init_user": 2
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "getUserInfo": {
+    "status":0,
+    "msg":"\u6210\u529f",
+    "data": {
+        "name": "张三",
+        "birth": "1987-12-09 12:22",
+        "join_company_time": "2016-07-12",
+        "company_name": "滴滴出行",
+        "company_id": 7947732472398,
+        "id": 742947328
+    }
+  }
+}
