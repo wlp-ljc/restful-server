@@ -1,77 +1,14 @@
 #JsonServer
     
-    可以用来创建RestApi，使用非常方便。
+    构建本地mock-server服务器，实现前后端分离
 
-# 1 json-server的基本使用
-##安装
+# 1 使用方法
+  
+    git clone https://github.com/wlp-ljc/restful-server.git
+    npm install 
+    npm run mock
 
-可以通过npm安装json-server
-    
-    npm install -g json-server
-
-## 基本使用
-1 创建一个就送文件
-
-比如官方的JSON文件
-    
-    {
-        "posts": [
-         { "id": 1, "title": "json-server", "author": "typicode" }
-        ],
-        "comments": [
-         { "id": 1, "body": "some comment", "postId": 1 }
-        ],
-        "profile": { "name": "typicode" }
-    }
-
-2 启动server
-
-使用json-server 启动服务
-
-    json-server --watch db.json
-
-#2 faker.js\chance.js\mockjs
-
-[faker.js](https://tonicdev.com/npm/) 和 [chance.js](http://chancejs.com/) 是用来生成随机测试数据的包。
-
-## faker.js
-
-## 安装使用
-
-### Browser
-
-    <script src = "faker.js" type = "text/javascript"></script>
-    <script>
-      var randomName = faker.name.findName(); // Caitlyn Kerluke
-      var randomEmail = faker.internet.email(); // Rusty@arne.info
-      var randomCard = faker.helpers.createCard(); // random contact card containing many properties
-    </script>
-    
-
-### Nodejs 
-
-    var faker = require('faker');
-    var randomName = faker.name.findName(); 
-    var randomEmail = faker.internet.email();
-    var randomCard = faker.helpers.createCard(); 
-    containing many properties
-
-## API Brower
-
-    
-        faker.js可以随机生成address、commerce、company、date、finance、hacker、helpers、image、internet、lorem、
-        phone等多种随机数据，具体可参见https://github.com/Marak/faker.js
-
-        除此之外，还可以利用faker.locale = "de" 设置本地模式 可以设置为中文模式，但是中文模式生成的随机数据较为奇怪
-
-## chance.js
-
-    chance.js与faker.js较为类似，具体使用方法可以参照http://chancejs.com/
-
-
-# restful服务器
-
-结合使用json-server、faker.js和chance.js设置restful API 服务器
+# 2 使用说明
 
 项目目录结构
 
@@ -89,10 +26,56 @@
           --index.js                                           数据生成主js
           --routes.json                                        路由映射
 
-## 使用方法
+## apijson
 
-    1. 下载上传的JsonServer文件
-    2. 使用npm install 安装资源文件
-    3. 使用npm run mock 启动服务
+>apijson目录下可以定义json文件，适用于数据固定的接口，如首页菜单，定义方式类似如下
+
+    {
+      "getIndexMenu": {
+        "status": 0, 
+        "msg": "success", 
+        "data": { 
+            ...  
+        }
+      }
+    }
 
 
+## apijs
+
+>apijs下结合chancejs、mockjs和faker.js，实现随机化的数据
+
+### mock.js    
+    var _ = require("lodash");
+    var {Random} = require('mockjs')
+    // 使用lodash和mockjs生成随机数据
+    // http://mockjs.com/examples.html
+    var db = (function(){
+      return {
+        "mock":{
+          status: 0,
+          msg: 'success',
+          data:_.times(5,function (n) {
+            return {
+              id: n,
+              // bool变量
+              bool: Random.bool(),
+              boolMinMax: Random.boolean(1, 9, true),
+              // 自然数
+              natural: Random.natural(),
+              naturalMin: Random.natural(10000),
+              naturalMinMax: Random.natural(60,100),
+              ....
+          }
+       }
+    }
+    module.exports = db;
+
+## routes.json
+
+实现路由的映射
+
+    {
+      "/mobile/getIndexMenu": "/getIndexMenu",
+      "/mobile/getUserInfo": "/getUserInfo",
+    }

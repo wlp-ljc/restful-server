@@ -1,4 +1,7 @@
 {
 	"/mobile/getIndexMenu": "/getIndexMenu",
-	"/mobile/getUserInfo": "/getUserInfo"
+	"/mobile/getUserInfo": "/getUserInfo",
+	"/gaea/mobile/detail": "/detail",
+	"/gaea/version": "/version",
+	"/api_v2/member/detailmobile": "/detailmobile"
 }
