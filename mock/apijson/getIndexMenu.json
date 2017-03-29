@@ -1,7 +1,7 @@
 {
   "getIndexMenu": {
     "status": 0, 
-    "msg": "success", 
+    "msg": "弹窗测试", 
     "data": { 
       "menu":[{
         "name": "首页",
